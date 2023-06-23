@@ -1,9 +1,9 @@
 #include "monty.h"
-
 /**
- * mo_swap - swaps the top two elements of the stack
- * @stack: pointer to the top of the stack
- * @line_num: line number of the opcode
+ * mo_swap - swaps the top two elements of the stack.
+ *
+ * @stack: pointer.
+ * @line_num: line number.
 */
 void mo_swap(stack_t **stack, unsigned int line_num)
 {
@@ -16,7 +16,6 @@ void mo_swap(stack_t **stack, unsigned int line_num)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
 	tmp = (*stack)->next;
 	(*stack)->next = tmp->next;
 
