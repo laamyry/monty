@@ -7,7 +7,7 @@
  */
 void mo_mul(stack_t **stack, unsigned int line_num)
 {
-	int result;
+	int res;
 	stack_t *tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -17,8 +17,8 @@ void mo_mul(stack_t **stack, unsigned int line_num)
 	}
 
 	tmp = *stack;
-	result = tmp->next->n * tmp->n;
-	tmp->next->n = result;
+	res = tmp->next->n * tmp->n;
+	tmp->next->n = res;
 	*stack = tmp->next;
 	free(tmp);
 }
