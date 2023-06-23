@@ -8,16 +8,16 @@
 void mo_sub(stack_t **stack, unsigned int line_num)
 {
 	int result;
-	stack_t *temp;
+	stack_t *tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	temp = *stack;
-	result = temp->next->n - temp->n;
-	temp->next->n = result;
-	*stack = temp->next;
-	free(temp);
+	tmp = *stack;
+	result = tmp->next->n - tmp->n;
+	tmp->next->n = result;
+	*stack = tmp->next;
+	free(tmp);
 }

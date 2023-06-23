@@ -8,7 +8,7 @@
 void mo_div(stack_t **stack, unsigned int line_num)
 {
 	int result;
-	stack_t *temp;
+	stack_t *tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -16,14 +16,14 @@ void mo_div(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	temp = *stack;
-	if (temp->n == 0)
+	tmp = *stack;
+	if (tmp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	result = temp->next->n / temp->n;
-	temp->next->n = result;
-	*stack = temp->next;
-	free(temp);
+	result = tmp->next->n / tmp->n;
+	tmp->next->n = result;
+	*stack = tmp->next;
+	free(tmp);
 }

@@ -7,7 +7,7 @@
 */
 void mo_swap(stack_t **stack, unsigned int line_num)
 {
-	stack_t *temp;
+	stack_t *tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -17,14 +17,14 @@ void mo_swap(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	temp = (*stack)->next;
-	(*stack)->next = temp->next;
+	tmp = (*stack)->next;
+	(*stack)->next = tmp->next;
 
-	if (temp->next != NULL)
+	if (tmp->next != NULL)
 
-	temp->next->prev = *stack;
-	temp->prev = NULL;
-	temp->next = *stack;
-	(*stack)->prev = temp;
-	*stack = temp;
+	tmp->next->prev = *stack;
+	tmp->prev = NULL;
+	tmp->next = *stack;
+	(*stack)->prev = tmp;
+	*stack = tmp;
 }
