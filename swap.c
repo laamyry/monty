@@ -1,29 +1,32 @@
 #include "monty.h"
 /**
- * mo_swap - swaps the top two elements of the stack.
+ * mo_swap - Swaps the top two elements of the stack.
  *
- * @stack: pointer.
- * @line_num: line number.
-*/
+ * @stack: Pointer.
+ * @line_num: Line number.
+ */
 void mo_swap(stack_t **stack, unsigned int line_num)
 {
-	stack_t *tmp;
+    stack_t *tmp;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
-		free(gener.line);
-		free_stack(*stack);
-		exit(EXIT_FAILURE);
-	}
-	tmp = (*stack)->next;
-	(*stack)->next = tmp->next;
+    if (*stack == NULL || (*stack)->next == NULL)
+    {
+        fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
+        free(gener.line);
+        free_stack(*stack);
+        exit(EXIT_FAILURE);
+    }
 
-	if (tmp->next != NULL)
+    tmp = (*stack)->next;
+    (*stack)->next = tmp->next;
 
-	tmp->next->prev = *stack;
-	tmp->prev = NULL;
-	tmp->next = *stack;
-	(*stack)->prev = tmp;
-	*stack = tmp;
+    if (tmp->next != NULL)
+    {
+        tmp->next->prev = *stack;
+    }
+
+    tmp->prev = NULL;
+    tmp->next = *stack;
+    (*stack)->prev = tmp;
+    *stack = tmp;
 }
