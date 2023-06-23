@@ -1,12 +1,14 @@
 #include "monty.h"
-
 /**
- * mo_mul - multiplies the second top element of the stack with the top element
- * @stack: double pointer to the head of the stack
- * @line_num: current line number in the file
+ * mo_mul -  multiplies the second top element of the stack
+ * with the top element of the stack.
+ *
+ * @stack: double pointer.
+ * @line_num: current line number.
  */
 void mo_mul(stack_t **stack, unsigned int line_num)
 {
+
 	int res;
 	stack_t *tmp;
 
@@ -21,4 +23,5 @@ void mo_mul(stack_t **stack, unsigned int line_num)
 	tmp->next->n = res;
 	*stack = tmp->next;
 	free(tmp);
+
 }
