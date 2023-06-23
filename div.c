@@ -1,12 +1,15 @@
 #include "monty.h"
 
 /**
- * mo_div - divides the second top element of the stack by the top element
- * @stack: double pointer to the head of the stack
- * @line_num: current line number in the file
+ * mo_div - divides the second top element of
+ * the stack by the top element of the stack.
+ *
+ * @stack: double pointer.
+ * @line_num: current line number.
  */
 void mo_div(stack_t **stack, unsigned int line_num)
 {
+
 	int res;
 	stack_t *tmp;
 
@@ -22,8 +25,10 @@ void mo_div(stack_t **stack, unsigned int line_num)
 		fprintf(stderr, "L%d: division by zero\n", line_num);
 		exit(EXIT_FAILURE);
 	}
+	
 	res = tmp->next->n / tmp->n;
 	tmp->next->n = res;
 	*stack = tmp->next;
 	free(tmp);
+
 }
