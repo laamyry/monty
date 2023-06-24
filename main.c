@@ -1,11 +1,10 @@
 #include "monty.h"
-
 gener_t gener;
-
 /**
  * main - entry point for the monty program
- * @argc: number of command line arguments
- * @argv: array of command line argument strings
+ *
+ * @argc: number of command line arguments.
+ * @argv: array of command line argument strings.
  *
  * Return: 0 on success, non-zero on failure
  */

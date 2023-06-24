@@ -22,7 +22,7 @@ void mo_pop(stack_t **stack, unsigned int line_num)
 	free(*stack);
 
 	*stack = tmp;
-	
+
 	if (*stack != NULL)
 	{
 		(*stack)->prev = NULL;

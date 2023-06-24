@@ -15,6 +15,7 @@ void mo_pchar(stack_t **stack, unsigned int line_num)
 	}
 
 	int value = (*stack)->n;
+
 	if (value < 0 || value > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
@@ -22,5 +23,5 @@ void mo_pchar(stack_t **stack, unsigned int line_num)
 	}
 
 	printf("%c\n", value);
-	
+
 }

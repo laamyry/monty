@@ -33,7 +33,7 @@ void mo_push(stack_t **stack, unsigned int line_num)
  * is_number - checks string is number.
  *
  * @str: string.
- * Return: 17.
+ * Return: 1.
  */
 int is_number(char *str)
 {

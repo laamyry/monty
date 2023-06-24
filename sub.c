@@ -2,13 +2,13 @@
 /**
  * mo_sub - subtracts the top element of the stack from
  * the second top element of the stack.
- * 
+ *
  * @stack: double pointer.
  * @line_num: current line number.
  */
 void mo_sub(stack_t **stack, unsigned int line_num)
 {
-	
+
 	int res;
 	stack_t *tmp;
 
