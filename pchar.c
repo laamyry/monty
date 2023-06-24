@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * mo_pchar - prints the char at the top of the stack.
  *
@@ -9,7 +8,7 @@
 void mo_pchar(stack_t **stack, unsigned int line_num)
 {
 
-	if (*stack == 0)
+	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
@@ -23,5 +22,5 @@ void mo_pchar(stack_t **stack, unsigned int line_num)
 	}
 
 	printf("%c\n", value);
-
+	
 }
