@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * mo_nop - nothing.
- * *
+ *
  * @stack: pointer.
  * @line_num: line number.
  **/

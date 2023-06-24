@@ -1,35 +1,34 @@
 #include "monty.h"
-
 /**
- * add_node - adds a new node at the beginning of a stack_t list
- * @stack: pointer to pointer of the top of the stack
- * @n: value to be added to the new node
+ * add_node - adds new node.
  *
- * Return: pointer to the newly added node
+ * @stack: pointer to pointer.
+ * @n: add value.
+ * Return: pointer.
  */
 stack_t *add_node(stack_t **stack, const int n)
 {
-	stack_t *new_node;
+	stack_t *n_node;
 
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	n_node = malloc(sizeof(stack_t));
+	if (n_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->n = n;
-	new_node->prev = NULL;
+	n_node->n = n;
+	n_node->prev = NULL;
 
 	if (*stack == NULL)
-		new_node->next = NULL;
+		n_node->next = NULL;
 	else
 	{
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
+		n_node->next = *stack;
+		(*stack)->prev = n_node;
 	}
-	*stack = new_node;
+	*stack = n_node;
 
-	return (new_node);
+	return (n_node);
 }
