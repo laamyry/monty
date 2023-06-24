@@ -78,8 +78,8 @@ typedef struct monty_glob
 	FILE* scrpt;
 } monty_glob;
 
-void execute_file(stack_t **stack);
-void execute_mocode(char *opcode, stack_t **stack, unsigned int line_num);
+void run_file(stack_t **stack);
+void run_mocode (char *opcode, stack_t **stack, unsigned int line_num);
 
 void mo_push(stack_t **stack, unsigned int line_num);
 void mo_pall(stack_t **stack, unsigned int line_num);

@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	execute_file(&stack);
+	run_file(&stack);
 	fclose(gener.file);
 	free(gener.line);
 	free_stack(stack);
